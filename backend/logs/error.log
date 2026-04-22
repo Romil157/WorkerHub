@@ -1,0 +1,726 @@
+[2026-04-18 16:07:23] ERROR: Email failed to monu@gamil.com: Unauthorized
+[2026-04-18 16:15:33] ERROR: Email failed to MONU@GMAIL.COM: Unauthorized
+[2026-04-18 16:41:04] ERROR: ❌ MongoDB connection error: querySrv ECONNREFUSED _mongodb._tcp.workercluster.jilumzl.mongodb.net
+[2026-04-18 17:21:42] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 20:22:48] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 20:51:26] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:02:59] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:05:30] ERROR: Unhandled error: Operation `admins.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `admins.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:05:38] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:08:56] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:11:03] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:11:38] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:11:40] ERROR: Unhandled error: Operation `admins.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `admins.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:12:13] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:13:37] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:13:39] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:13:47] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:14:15] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:14:50] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:15:25] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:15:27] ERROR: Unhandled error: Operation `users.find()` buffering timed out after 10000ms
+MongooseError: Operation `users.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:15:57] ERROR: Unhandled error: Operation `complaints.find()` buffering timed out after 10000ms
+MongooseError: Operation `complaints.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:00] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:16:04] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:07] ERROR: Unhandled error: Operation `complaints.find()` buffering timed out after 10000ms
+MongooseError: Operation `complaints.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:08] ERROR: Unhandled error: Operation `workers.find()` buffering timed out after 10000ms
+MongooseError: Operation `workers.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:14] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:18] ERROR: Unhandled error: Operation `workers.find()` buffering timed out after 10000ms
+MongooseError: Operation `workers.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:19] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:26] ERROR: Unhandled error: Operation `bookings.aggregate()` buffering timed out after 10000ms
+MongooseError: Operation `bookings.aggregate()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:16:35] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:17:10] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:17:26] ERROR: Unhandled error: Operation `workers.find()` buffering timed out after 10000ms
+MongooseError: Operation `workers.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:17:36] ERROR: Unhandled error: Operation `workers.find()` buffering timed out after 10000ms
+MongooseError: Operation `workers.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:17:45] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:18:20] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:18:52] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:18:55] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:19:04] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:19:30] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:19:30] ERROR: 💀 Max MongoDB connection retries reached. Server running WITHOUT database.
+[2026-04-18 21:19:30] ERROR: 👉 Fix: Go to MongoDB Atlas → Network Access → Add IP → Allow Access From Anywhere (0.0.0.0/0)
+[2026-04-18 21:21:52] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:22:27] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:23:02] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:23:37] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:24:12] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:24:47] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:25:22] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:25:57] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:26:33] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:27:08] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:27:25] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:27:38] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:27:43] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:27:43] ERROR: 💀 Max MongoDB connection retries reached. Server running WITHOUT database.
+[2026-04-18 21:27:43] ERROR: 👉 Fix: Go to MongoDB Atlas → Network Access → Add IP → Allow Access From Anywhere (0.0.0.0/0)
+[2026-04-18 21:28:24] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:28:48] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:29:33] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:29:52] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:30:26] ERROR: Unhandled error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[2026-04-18 21:30:27] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:31:02] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:31:37] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:32:12] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:32:47] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:33:22] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:33:57] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:34:32] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:35:07] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:35:42] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:35:42] ERROR: 💀 Max MongoDB connection retries reached. Server running WITHOUT database.
+[2026-04-18 21:35:42] ERROR: 👉 Fix: Go to MongoDB Atlas → Network Access → Add IP → Allow Access From Anywhere (0.0.0.0/0)
+[2026-04-18 21:47:43] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:48:12] ERROR: ❌ MongoDB connection error: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-04-18 21:50:27] ERROR: Unhandled error: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+    at Topology.selectServer (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async tryOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:196:22)
+    at async executeOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async FindCursor._initialize (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async FindCursor.fetchBatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async FindCursor.next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+    at async Collection.findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2710:15)
+    at async model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:63)
+[2026-04-18 21:51:39] ERROR: Email failed to yashvora9925@gmail.com: Unauthorized
+[2026-04-18 21:54:49] ERROR: Email failed to monu@gmail.com: Unauthorized
+[2026-04-19 22:04:17] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:17] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:17] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:17] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:04:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:05:05] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:05:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:06:05] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:06:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:07:05] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:07:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:08:05] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:08:53] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:09:53] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:10:53] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 22:11:53] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:41:25] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:41:34] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:46:16] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:46:55] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:56:36] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:56:41] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:58:34] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:58:38] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-19 23:59:03] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 00:00:43] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 00:14:35] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 00:14:37] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 00:14:45] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 00:16:41] ERROR: Unhandled error: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+CastError: Cast to ObjectId failed for value "dev-admin-id" (type string) at path "_id" for model "User"
+    at SchemaObjectId.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1288:12)
+    at SchemaType.castForQuery (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\schemaType.js:1724:17)
+    at cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\cast.js:390:32)
+    at Query.cast (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:5060:12)
+    at Query._castConditions (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2374:10)
+    at model.Query._findOne (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2697:8)
+    at model.Query.exec (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:4627:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async protect (C:\Users\YASH\Desktop\hyperlocal\backend\src\middleware\auth.js:29:16)
+[2026-04-20 22:20:38] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:20:38] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:20:52] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:20:52] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:21:22] ERROR: Unhandled error: Customer is not defined
+ReferenceError: Customer is not defined
+    at getDashboard (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:115:20)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:119:3)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:280:10)
+[2026-04-20 22:21:22] ERROR: Unhandled error: Customer is not defined
+ReferenceError: Customer is not defined
+    at getDashboard (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:115:20)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:119:3)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\index.js:280:10)
+[2026-04-20 22:21:27] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:21:27] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:21:42] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 22:21:49] ERROR: Unhandled error: Worker is not defined
+ReferenceError: Worker is not defined
+    at searchWorkers (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\customer.controller.js:77:5)
+    at newFn (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:807:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\express-rate-limit\dist\index.cjs:691:5
+[2026-04-20 23:00:36] ERROR: Unhandled error: Cannot read properties of null (reading 'email')
+TypeError: Cannot read properties of null (reading 'email')
+    at rejectWorker (C:\Users\YASH\Desktop\hyperlocal\backend\src\controllers\admin.controller.js:183:61)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-04-22 12:07:49] ERROR: Unhandled error: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+    at Topology.selectServer (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+    at async tryOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async AggregationCursor._initialize (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\aggregation_cursor.js:57:26)
+    at async AggregationCursor.cursorInit (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async AggregationCursor.fetchBatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async AggregationCursor.next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+[2026-04-22 12:08:09] ERROR: Unhandled error: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7ivxhxg-shard-00-01.jilumzl.mongodb.net
+    at Topology.selectServer (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+    at async tryOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async AggregationCursor._initialize (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\aggregation_cursor.js:57:26)
+    at async AggregationCursor.cursorInit (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async AggregationCursor.fetchBatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async AggregationCursor.next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+[2026-04-22 15:16:35] ERROR: Unhandled error: connection <monitor> to 159.41.207.243:27017 closed
+MongoServerSelectionError: connection <monitor> to 159.41.207.243:27017 closed
+    at Topology.selectServer (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async tryOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async FindCursor._initialize (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async FindCursor.fetchBatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async FindCursor.next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
+    at async [Symbol.asyncIterator] (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:250:34)
+    at async FindCursor.toArray (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:422:26)
+    at async model.Query._find (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\lib\query.js:2430:14)
+[2026-04-22 15:16:41] ERROR: Unhandled error: read ECONNRESET
+MongoServerSelectionError: read ECONNRESET
+    at Topology.selectServer (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+    at async tryOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:148:18)
+    at async executeOperation (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async AggregationCursor._initialize (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\aggregation_cursor.js:57:26)
+    at async AggregationCursor.cursorInit (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:632:27)
+    at async AggregationCursor.fetchBatch (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:666:13)
+    at async AggregationCursor.next (C:\Users\YASH\Desktop\hyperlocal\backend\node_modules\mongoose\node_modules\mongodb\lib\cursor\abstract_cursor.js:342:17)
