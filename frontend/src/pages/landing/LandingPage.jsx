@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import image1 from '../../assets/image1.jpeg';
 import image2 from '../../assets/image2.jpeg';
-import image4 from '../../assets/image4.jpeg';
 
 const TRUST_METRICS = [
   { value: '5,000+', label: 'Verified Workers' },
@@ -314,7 +313,7 @@ export default function LandingPage() {
           {/* Added Images grid to increase scroll length and professionalism */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
             <img src={image1} style={{ width: '100%', height: 350, objectFit: 'cover', borderRadius: 24, boxShadow: 'var(--shadow-md)' }} alt="Electrician at work" />
-            <img src={image4} style={{ width: '100%', height: 350, objectFit: 'cover', borderRadius: 24, boxShadow: 'var(--shadow-md)' }} alt="Trust Handshake" />
+            <img src={image2} style={{ width: '100%', height: 350, objectFit: 'cover', borderRadius: 24, boxShadow: 'var(--shadow-md)' }} alt="Trust Handshake" />
           </div>
         </div>
       </section>
