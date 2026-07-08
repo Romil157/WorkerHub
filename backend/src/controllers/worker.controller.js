@@ -115,6 +115,7 @@ const getOrders = async (req, res) => {
   const [bookings, total] = await Promise.all([
     Booking.find(query)
       .populate('customerId', 'name avatar phone')
+      .populate('reserviceRequestId')
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(parseInt(limit)),

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Search, Heart, Star, MapPin, User, LayoutDashboard, MessageSquare, Briefcase, LogOut, Wrench, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Search, Heart, Star, MapPin, User, LayoutDashboard, MessageSquare, Briefcase, LogOut, Wrench, Clock, CheckCircle, AlertCircle, XCircle, MessageCircle } from 'lucide-react';
 import api from '../../services/api';
 import useAuthStore from '../../store/authStore';
 import NotificationBell from '../../components/NotificationBell';
@@ -70,6 +70,33 @@ export default function CustomerDashboard() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchSkill, setSearchSkill] = useState('');
+
+  // Support / Query state (Phase 5)
+  const [supportModal, setSupportModal] = useState(false);
+  const [newQuestion, setNewQuestion] = useState('');
+  const [myQueries, setMyQueries] = useState([]);
+  const [submittingQuery, setSubmittingQuery] = useState(false);
+
+  useEffect(() => {
+    if (supportModal) {
+      api.get('/queries/mine')
+        .then(r => setMyQueries(r.data.data))
+        .catch(() => {});
+    }
+  }, [supportModal]);
+
+  const handleSubmitQuery = async () => {
+    if (!newQuestion.trim()) return;
+    setSubmittingQuery(true);
+    try {
+      await api.post('/queries', { question: newQuestion.trim() });
+      setNewQuestion('');
+      // Reload queries
+      const r = await api.get('/queries/mine');
+      setMyQueries(r.data.data);
+    } catch {}
+    setSubmittingQuery(false);
+  };
 
   const load = async (silent = false) => {
     if (!silent) setLoading(true); else setRefreshing(true);
@@ -222,8 +249,84 @@ export default function CustomerDashboard() {
               )}
             </div>
           </div>
+
+          {/* Help & Support Card (Phase 5) */}
+          <div className="card" style={{ marginTop: 28, padding: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: 8, margin: 0 }}><MessageCircle size={20} color="var(--color-forest)" /> Help & Support Channel</h4>
+              <p style={{ color: 'var(--color-subtle)', fontSize: '0.85rem', margin: '4px 0 0 0' }}>Have questions about our app, charges, or a booking? Ask our support executives here.</p>
+            </div>
+            <button className="btn btn--primary btn--sm" onClick={() => setSupportModal(true)}>
+              Ask a Question
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* ===================== SUPPORT MODAL (Phase 5) ===================== */}
+      {supportModal && (
+        <div className="modal-overlay" onClick={() => setSupportModal(false)}>
+          <motion.div className="modal" initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} onClick={e => e.stopPropagation()}
+            style={{ maxWidth: 540, display: 'flex', flexDirection: 'column', maxHeight: '85vh' }}>
+            <div className="flex-between" style={{ marginBottom: 20, flexShrink: 0 }}>
+              <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                💬 Ask a Question
+              </h3>
+              <button onClick={() => setSupportModal(false)} className="btn btn--ghost btn--icon"><XCircle size={20} /></button>
+            </div>
+
+            {/* Past queries list */}
+            <div style={{ flex: 1, overflowY: 'auto', marginBottom: 20, paddingRight: 4 }}>
+              <h5 style={{ marginBottom: 12, color: 'var(--color-charcoal)' }}>Your Support Tickets</h5>
+              {myQueries.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '24px 0', color: 'var(--color-subtle)', fontSize: '0.85rem' }}>
+                  No past questions. Submit your first query below!
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {myQueries.map(q => (
+                    <div key={q._id} style={{ background: 'var(--color-cream)', borderRadius: 12, padding: 14, border: '1px solid var(--color-border)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                        <span style={{ fontSize: '0.72rem', color: 'var(--color-subtle)' }}>{new Date(q.createdAt).toLocaleDateString('en-IN')}</span>
+                        <span className={`badge badge--${q.status === 'answered' ? 'verified' : q.status === 'closed' ? 'subtle' : 'pending'}`} style={{ fontSize: '0.65rem', padding: '2px 8px' }}>
+                          {q.status}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--color-charcoal)', fontWeight: 600, margin: 0 }}>Q: {q.question}</p>
+                      {q.adminReply && (
+                        <div style={{ background: '#fff', borderRadius: 8, padding: 10, marginTop: 8, borderLeft: '3px solid var(--color-forest)' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--color-subtle)', display: 'block', marginBottom: 2 }}>Admin reply:</span>
+                          <p style={{ fontSize: '0.82rem', color: 'var(--color-mid)', margin: 0 }}>{q.adminReply}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* New query input */}
+            <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: 16, flexShrink: 0 }}>
+              <div className="form-group" style={{ marginBottom: 16 }}>
+                <label className="form-label" style={{ fontWeight: 600 }}>New Question</label>
+                <textarea
+                  className="form-textarea"
+                  rows={3}
+                  placeholder="Ask any question... e.g. How do I request a receipt? How can I change my email?"
+                  value={newQuestion}
+                  onChange={e => setNewQuestion(e.target.value)}
+                />
+              </div>
+              <div style={{ display: 'flex', gap: 12 }}>
+                <button className="btn btn--ghost btn--full" onClick={() => setSupportModal(false)}>Close</button>
+                <button className="btn btn--primary btn--full" onClick={handleSubmitQuery} disabled={submittingQuery || !newQuestion.trim()}>
+                  {submittingQuery ? 'Submitting...' : 'Submit Question'}
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

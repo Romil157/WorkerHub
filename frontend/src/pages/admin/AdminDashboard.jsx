@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LayoutDashboard, Shield, AlertCircle, Users, TrendingUp, LogOut, Bell, Wrench, TrendingDown } from 'lucide-react';
+import { LayoutDashboard, Shield, AlertCircle, Users, TrendingUp, LogOut, Bell, Wrench, TrendingDown, XCircle, MessageSquare } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import api from '../../services/api';
 import useAuthStore from '../../store/authStore';
+import toast from 'react-hot-toast';
 
 export const AdminSidebar = () => {
   const location = useLocation();
@@ -70,10 +71,35 @@ const StatCard = ({ label, value, sub, icon, color, trend }) => (
 export default function AdminDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [queries, setQueries] = useState([]);
+  const [replyText, setReplyText] = useState({});
+  const [submittingReply, setSubmittingReply] = useState({});
+
+  const loadQueries = () => {
+    api.get('/queries?status=open')
+      .then(r => setQueries(r.data.data.queries || []))
+      .catch(() => {});
+  };
 
   useEffect(() => {
     api.get('/admin/dashboard').then(r => setData(r.data.data)).catch(() => {}).finally(() => setLoading(false));
+    loadQueries();
   }, []);
+
+  const handleSendReply = async (queryId) => {
+    const text = replyText[queryId];
+    if (!text || !text.trim()) return;
+    setSubmittingReply(prev => ({ ...prev, [queryId]: true }));
+    try {
+      await api.put(`/queries/${queryId}/reply`, { reply: text.trim() });
+      toast.success('Reply submitted!');
+      setReplyText(prev => ({ ...prev, [queryId]: '' }));
+      loadQueries();
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to submit reply');
+    }
+    setSubmittingReply(prev => ({ ...prev, [queryId]: false }));
+  };
 
   if (loading) return (
     <div className="portal-layout">
@@ -154,6 +180,62 @@ export default function AdminDashboard() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Support Queries Queue (Phase 5) */}
+          <div className="card" style={{ marginTop: 28, padding: 24 }}>
+            <h4 style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
+              <MessageSquare size={20} color="var(--color-rust)" /> Open Support Tickets ({queries.length})
+            </h4>
+
+            {queries.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '32px 0', color: 'var(--color-subtle)', fontSize: '0.9rem' }}>
+                🎉 No pending support tickets. Excellent!
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                {queries.map(q => (
+                  <div key={q._id} style={{ border: '1px solid var(--color-border)', borderRadius: 12, padding: 20, background: '#fff' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
+                      <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+                        <img src={q.askerId?.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(q.askerId?.name || 'U')}&background=FAF5F0&color=2C2C2C`} className="avatar avatar--sm" alt="" />
+                        <div>
+                          <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{q.askerId?.name}</div>
+                          <div style={{ fontSize: '0.72rem', color: 'var(--color-subtle)', textTransform: 'capitalize' }}>Role: {q.askerId?.userType}</div>
+                        </div>
+                      </div>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--color-subtle)' }}>
+                        Asked: {new Date(q.createdAt).toLocaleString('en-IN')}
+                      </span>
+                    </div>
+
+                    <div style={{ background: 'var(--color-cream)', borderRadius: 8, padding: '12px 16px', fontSize: '0.9rem', color: 'var(--color-charcoal)', fontWeight: 500 }}>
+                      "{q.question}"
+                    </div>
+
+                    <div style={{ display: 'flex', gap: 12, marginTop: 16 }}>
+                      <input
+                        className="form-input"
+                        placeholder="Type reply to customer/worker..."
+                        value={replyText[q._id] || ''}
+                        onChange={e => {
+                          const val = e.target.value;
+                          setReplyText(prev => ({ ...prev, [q._id]: val }));
+                        }}
+                        style={{ fontSize: '0.85rem' }}
+                      />
+                      <button
+                        className="btn btn--primary btn--sm"
+                        disabled={submittingReply[q._id] || !(replyText[q._id]?.trim())}
+                        onClick={() => handleSendReply(q._id)}
+                      >
+                        {submittingReply[q._id] ? 'Replying...' : 'Send Reply'}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -166,6 +166,7 @@ const getOrders = async (req, res) => {
     Booking.find(query)
       .populate('workerId', 'name avatar phone')
       .populate('workerProfileId', 'primarySkill overallRating')
+      .populate('reserviceRequestId')
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(parseInt(limit)),

@@ -5,6 +5,7 @@ const {
   uploadPortfolio, getDashboard, getOrders, completeOrder, updateAvailability,
   getEarnings, uploadAvatar,
 } = require('../controllers/worker.controller');
+const { getRoute } = require('../controllers/route.controller');
 const { protect, workerOnly, verifiedWorkerOnly } = require('../middleware/auth');
 const { uploadLimiter } = require('../middleware/rateLimiter');
 const { upload } = require('../services/cloudinary.service');
@@ -19,6 +20,7 @@ router.get('/earnings', getEarnings);
 router.get('/orders', getOrders);
 router.put('/orders/:bookingId/complete', completeOrder);
 router.put('/availability', updateAvailability);
+router.get('/route', getRoute);
 
 // Document uploads (rate limited)
 router.post('/upload-aadhar', uploadLimiter, upload.fields([

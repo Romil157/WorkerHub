@@ -98,11 +98,11 @@ module.exports = {
   sendEmailVerification: (email, name, token) =>
     sendEmail(email, 'Verify your WorkerHub email', templates.emailVerification(name, token)),
   sendVerificationApproved: (email, name) =>
-    sendEmail(email, '🎉 Your WorkerHub profile is verified!', templates.verificationApproved(name)),
+    sendEmail(email, 'Your WorkerHub profile is verified!', templates.verificationApproved(name)),
   sendVerificationRejected: (email, name, reason) =>
     sendEmail(email, 'WorkerHub Verification Update', templates.verificationRejected(name, reason)),
   sendAIImageFlaggedEmail: (email, name, docType) =>
-    sendEmail(email, '⚠️ Image Review Required - WorkerHub', templates.aiImageFlagged(name, docType)),
+    sendEmail(email, 'Image Review Required - WorkerHub', templates.aiImageFlagged(name, docType)),
   sendBookingConfirmation: (customer, worker, booking) =>
     sendEmail(customer.email, 'Booking Confirmed - WorkerHub', templates.bookingConfirmation(customer.name, worker.name, booking)),
   sendReviewRequest: async (customerId, bookingId) => {

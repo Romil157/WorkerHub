@@ -18,12 +18,19 @@ const getRazorpay = () => {
 
 // POST /api/bookings
 const createBooking = async (req, res) => {
-  const {
+  let {
     workerId, skillRequired, description, specialInstructions,
     location, scheduledDate, scheduledTime,
     estimatedDuration = 2,  // hours from frontend
     paymentMethod = 'upi',
+    bookingType = 'instant',  // 'instant' | 'scheduled' -- defaults to instant
+    scheduledFor,             // ISO date for scheduled bookings
   } = req.body;
+
+  // When sent via FormData, location arrives as a JSON string
+  if (typeof location === 'string') {
+    try { location = JSON.parse(location); } catch { location = {}; }
+  }
 
   if (!workerId || !skillRequired || !scheduledDate) {
     throw new AppError('workerId, skillRequired and scheduledDate are required', 400);
@@ -58,6 +65,53 @@ const createBooking = async (req, res) => {
     const uploadResults = await Promise.all(uploadPromises);
     problemPhotos = uploadResults.map(r => r.secure_url);
   }
+
+  // --- Scheduled booking: validate availability slot ---
+  if (bookingType === 'scheduled') {
+    if (!scheduledFor) {
+      throw new AppError('scheduledFor date is required for scheduled bookings', 400);
+    }
+    const scheduledDate_parsed = new Date(scheduledFor);
+    if (scheduledDate_parsed <= new Date()) {
+      throw new AppError('scheduledFor must be a future date/time', 400);
+    }
+
+    // Check worker availability calendar for the requested day/time
+    const scheduledDay = scheduledDate_parsed.getDay(); // 0=Sunday
+    const scheduledTimeStr = scheduledTime || `${scheduledDate_parsed.getHours().toString().padStart(2, '0')}:${scheduledDate_parsed.getMinutes().toString().padStart(2, '0')}`;
+    const [schH, schM] = scheduledTimeStr.split(':').map(Number);
+    const scheduledMinutes = schH * 60 + schM;
+
+    if (workerProfile.availabilityCalendar && workerProfile.availabilityCalendar.length > 0) {
+      // Check if any slot covers this day and time
+      const hasMatchingSlot = workerProfile.availabilityCalendar.some((slot) => {
+        if (!slot.isAvailable) return false;
+
+        // Match by specific date if set, otherwise by dayOfWeek
+        let dayMatches = false;
+        if (slot.date) {
+          const slotDate = new Date(slot.date);
+          dayMatches = slotDate.toDateString() === scheduledDate_parsed.toDateString();
+        } else if (slot.dayOfWeek !== undefined && slot.dayOfWeek !== null) {
+          dayMatches = slot.dayOfWeek === scheduledDay;
+        }
+        if (!dayMatches) return false;
+
+        // Check time range
+        const [startH, startM] = (slot.startTime || '09:00').split(':').map(Number);
+        const [endH, endM] = (slot.endTime || '18:00').split(':').map(Number);
+        const slotStartMin = startH * 60 + startM;
+        const slotEndMin = endH * 60 + endM;
+
+        return scheduledMinutes >= slotStartMin && scheduledMinutes < slotEndMin;
+      });
+
+      if (!hasMatchingSlot) {
+        throw new AppError('The worker is not available at the requested time. Please choose a different slot.', 400);
+      }
+    }
+  }
+  // --- End scheduled availability check ---
 
   // --- Check for time slot collisions ---
   // Extract exact day bounds without strict timezone bleed
@@ -111,6 +165,8 @@ const createBooking = async (req, res) => {
     paymentMethod: paymentMethod === 'cash' ? 'cash' : 'upi',
     paymentGateway: paymentMethod === 'cash' ? 'cash' : 'razorpay',
     problemPhotos,
+    bookingType: bookingType || 'instant',
+    scheduledFor: bookingType === 'scheduled' ? new Date(scheduledFor) : undefined,
   });
 
   // Notify worker

@@ -4,12 +4,14 @@ const {
   searchWorkers, getWorkerPublicProfile, getDashboard,
   toggleFavorite, getOrders, getFavorites, fileComplaint, getMyComplaints,
 } = require('../controllers/customer.controller');
+const { getWorkerAvailability } = require('../controllers/availability.controller');
 const { protect, customerOnly } = require('../middleware/auth');
 const { searchLimiter } = require('../middleware/rateLimiter');
 
 // Public search (no auth needed)
 router.get('/search', searchLimiter, searchWorkers);
 router.get('/workers/:workerId', getWorkerPublicProfile);
+router.get('/workers/:workerId/availability', getWorkerAvailability);
 
 // Protected customer routes
 router.use(protect, customerOnly);

@@ -30,6 +30,8 @@ const reviewRoutes = require('./src/routes/review.routes');
 const messageRoutes = require('./src/routes/message.routes');
 const notificationRoutes = require('./src/routes/notification.routes');
 const skillRoutes = require('./src/routes/skill.routes');
+const reserviceRoutes = require('./src/routes/reservice.routes');
+const queryRoutes = require('./src/routes/query.routes');
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -98,6 +100,8 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/skills', skillRoutes);
+app.use('/api/reservice', reserviceRoutes);
+app.use('/api/queries', queryRoutes);
 
 // 404 handler
 app.use(notFound);

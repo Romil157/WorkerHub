@@ -80,6 +80,11 @@ export default function CustomerOrders() {
   const [complaintDesc, setComplaintDesc] = useState('');
   const [filing, setFiling] = useState(false);
 
+  // Re-service state (Phase 4)
+  const [reserviceModal, setReserviceModal] = useState(null);
+  const [reserviceReason, setReserviceReason] = useState('');
+  const [submittingReservice, setSubmittingReservice] = useState(false);
+
   // Detail expand
   const [expandedId, setExpandedId] = useState(null);
 
@@ -100,11 +105,43 @@ export default function CustomerOrders() {
     try {
       await api.post('/reviews', { bookingId: reviewModal._id, rating: review.rating, text: review.text });
       toast.success('Review submitted! Thank you ⭐');
+      const bId = reviewModal._id;
       setReviewModal(null);
       setReview({ rating: 5, text: '' });
       load();
+
+      // Auto-trigger re-service prompt on low rating (<= 2 stars)
+      if (review.rating <= 2) {
+        const originalOrder = orders.find(o => o._id === bId);
+        if (originalOrder && !originalOrder.reserviceRequestId) {
+          setTimeout(() => {
+            setReserviceModal(originalOrder);
+          }, 600);
+        }
+      }
     } catch {}
     setSubmitting(false);
+  };
+
+  const handleRequestReservice = async () => {
+    if (!reserviceReason.trim()) {
+      toast.error('Please enter a reason for the re-service request');
+      return;
+    }
+    setSubmittingReservice(true);
+    try {
+      await api.post('/reservice', {
+        bookingId: reserviceModal._id,
+        reason: reserviceReason.trim(),
+      });
+      toast.success('Re-service requested successfully! The worker has been notified.');
+      setReserviceModal(null);
+      setReserviceReason('');
+      load();
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to request re-service');
+    }
+    setSubmittingReservice(false);
   };
 
   const handleStartTimer = async (bookingId) => {
@@ -353,6 +390,16 @@ export default function CustomerOrders() {
                               </div>
                             )}
 
+                            {/* Re-service Request Info */}
+                            {order.reserviceRequestId && (
+                              <div style={{ background: 'var(--color-rust-pale)', borderRadius: 10, padding: '12px 16px', marginBottom: 16, fontSize: '0.85rem' }}>
+                                <strong style={{ color: 'var(--color-rust-dark)' }}>🛠️ Re-service: {order.reserviceRequestId.status === 'requested' ? 'Requested' : order.reserviceRequestId.status === 'scheduled' ? 'Scheduled' : 'Completed'}</strong>
+                                {order.reserviceRequestId.reason && <p style={{ margin: '4px 0 0', color: 'var(--color-charcoal)' }}><strong>Reason:</strong> {order.reserviceRequestId.reason}</p>}
+                                {order.reserviceRequestId.scheduledFor && <p style={{ margin: '4px 0 0', color: 'var(--color-forest)', fontWeight: 600 }}>📅 Scheduled Date: {new Date(order.reserviceRequestId.scheduledFor).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</p>}
+                                {order.reserviceRequestId.completedAt && <p style={{ margin: '4px 0 0', color: 'var(--color-verified)', fontWeight: 600 }}>✓ Completed on: {new Date(order.reserviceRequestId.completedAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</p>}
+                              </div>
+                            )}
+
                             {/* Action Buttons */}
                             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                               {order.status === 'arrived' && (
@@ -375,6 +422,22 @@ export default function CustomerOrders() {
                               {order.status === 'completed' && order.customerReviewId && (
                                 <span style={{ fontSize: '0.8rem', color: 'var(--color-forest)', fontWeight: 600, padding: '8px 12px', background: 'var(--color-forest-pale)', borderRadius: 8 }}>✓ Reviewed</span>
                               )}
+
+                              {/* Request Re-service Button */}
+                              {order.status === 'completed' && !order.reserviceRequestId && (
+                                (() => {
+                                  const compAt = order.completedAt || order.paidAt || order.updatedAt;
+                                  const elapsed = Date.now() - new Date(compAt).getTime();
+                                  const within48h = elapsed < 48 * 60 * 60 * 1000;
+                                  return within48h ? (
+                                    <button className="btn btn--sm" onClick={() => { setReserviceModal(order); setReserviceReason(''); }}
+                                      style={{ background: 'var(--color-rust-pale)', color: 'var(--color-rust-dark)', border: '1px solid var(--color-rust-light)', fontWeight: 600 }}>
+                                      🛠️ Request Re-service
+                                    </button>
+                                  ) : null;
+                                })()
+                              )}
+
                               {canCancel(order) && (
                                 <button className="btn btn--sm" onClick={() => setCancelModal(order)}
                                   style={{ background: '#FEF2F2', color: '#E74C3C', border: '1px solid #E74C3C', fontWeight: 600 }}>
@@ -569,6 +632,62 @@ export default function CustomerOrders() {
               <button className="btn btn--full" onClick={submitComplaint} disabled={filing || !complaintReason}
                 style={{ background: '#856404', color: '#fff', fontWeight: 700 }}>
                 {filing ? 'Filing...' : 'Submit Complaint'}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* ===================== RESERVICE MODAL (Phase 4) ===================== */}
+      {reserviceModal && (
+        <div className="modal-overlay" onClick={() => setReserviceModal(null)}>
+          <motion.div className="modal" initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} onClick={e => e.stopPropagation()}
+            style={{ maxWidth: 480 }}>
+            <div className="flex-between" style={{ marginBottom: 20 }}>
+              <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                🛠️ Request Re-service
+              </h3>
+              <button onClick={() => setReserviceModal(null)} className="btn btn--ghost btn--icon"><XCircle size={20} /></button>
+            </div>
+
+            {/* Booking summary */}
+            <div style={{ background: 'var(--color-rust-pale)', borderRadius: 12, padding: 16, marginBottom: 20 }}>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                <img src={reserviceModal.workerId?.avatar || `https://ui-avatars.com/api/?name=W&background=D4501D&color=fff`} className="avatar avatar--sm" alt="" />
+                <div>
+                  <div style={{ fontWeight: 600 }}>{reserviceModal.workerId?.name}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--color-mid)' }}>{reserviceModal.skillRequired} • completed ₹{reserviceModal.totalAmount}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Business rules callout */}
+            <div style={{ background: '#EFF6FF', borderRadius: 10, padding: '12px 16px', marginBottom: 20, fontSize: '0.82rem', border: '1px solid #BFDBFE', color: '#1E40AF' }}>
+              <strong>📋 Re-service Agreement:</strong>
+              <ul style={{ margin: '6px 0 0', paddingLeft: 16, lineHeight: 1.6 }}>
+                <li>No extra charge -- completely covered.</li>
+                <li>Goes to the same worker who did the original job.</li>
+                <li>Limited to exactly one re-service per booking.</li>
+              </ul>
+            </div>
+
+            {/* Reason input */}
+            <div className="form-group" style={{ marginBottom: 20 }}>
+              <label className="form-label">What wasn't done right? *</label>
+              <textarea
+                className="form-textarea"
+                rows={4}
+                placeholder="Explain what specific issues need fixing. E.g., 'The kitchen sink pipe is still dripping slightly when the water is turned on...'"
+                value={reserviceReason}
+                onChange={e => setReserviceReason(e.target.value)}
+              />
+            </div>
+
+            <div style={{ display: 'flex', gap: 12 }}>
+              <button className="btn btn--ghost btn--full" onClick={() => setReserviceModal(null)}>Cancel</button>
+              <button className="btn btn--full" onClick={handleRequestReservice} disabled={submittingReservice}
+                style={{ background: 'var(--color-rust)', color: '#fff', fontWeight: 700 }}>
+                {submittingReservice ? 'Requesting...' : 'Submit Request'}
               </button>
             </div>
           </motion.div>

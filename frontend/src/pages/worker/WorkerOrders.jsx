@@ -76,6 +76,46 @@ export default function WorkerOrders() {
   const [receiptModal, setReceiptModal] = useState(null); // order object for finish-job preview
   const [receiptDone, setReceiptDone] = useState(null);   // order object for post-payment receipt
 
+  // Re-service state (Phase 4)
+  const [reserviceScheduleModal, setReserviceScheduleModal] = useState(null); // reserviceRequest object
+  const [reserviceDate, setReserviceDate] = useState('');
+  const [reserviceTime, setReserviceTime] = useState('10:00');
+  const [schedulingReservice, setSchedulingReservice] = useState(false);
+  const [completingReservice, setCompletingReservice] = useState(null); // id of reserviceRequest being completed
+
+  const handleScheduleReservice = async () => {
+    if (!reserviceDate || !reserviceTime) {
+      toast.error('Please select both date and time for the revisit');
+      return;
+    }
+    setSchedulingReservice(true);
+    try {
+      const scheduledFor = new Date(`${reserviceDate}T${reserviceTime}:00`);
+      await api.put(`/reservice/${reserviceScheduleModal._id}/schedule`, {
+        scheduledFor: scheduledFor.toISOString(),
+      });
+      toast.success('Re-service visit scheduled!');
+      setReserviceScheduleModal(null);
+      setReserviceDate('');
+      load();
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to schedule re-service');
+    }
+    setSchedulingReservice(false);
+  };
+
+  const handleCompleteReservice = async (id) => {
+    setCompletingReservice(id);
+    try {
+      await api.put(`/reservice/${id}/complete`);
+      toast.success('Re-service completed! Customer has been notified.');
+      load();
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to complete re-service');
+    }
+    setCompletingReservice(null);
+  };
+
   const load = async () => {
     setLoading(true);
     try {
@@ -221,6 +261,38 @@ export default function WorkerOrders() {
                       </div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--color-subtle)', marginBottom: 6 }}>{order.skillRequired} • {new Date(order.scheduledDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} at {order.scheduledTime}</div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--color-mid)', margin: 0, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{order.description}</p>
+                      {/* Problem photos from customer (Phase 3) */}
+                      {order.problemPhotos && order.problemPhotos.length > 0 && (
+                        <div style={{ display: 'flex', gap: 6, marginTop: 8, flexWrap: 'wrap' }}>
+                          {order.problemPhotos.map((url, pi) => (
+                            <a key={pi} href={url} target="_blank" rel="noopener noreferrer"
+                              style={{ width: 52, height: 52, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)', display: 'block', flexShrink: 0 }}>
+                              <img src={url} alt={`Problem ${pi + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </a>
+                          ))}
+                          <span style={{ fontSize: '0.7rem', color: 'var(--color-subtle)', alignSelf: 'center', marginLeft: 4 }}>
+                            {order.problemPhotos.length} photo{order.problemPhotos.length > 1 ? 's' : ''} attached
+                          </span>
+                        </div>
+                      )}
+                      
+                      {/* Re-service Request Info (Phase 4) */}
+                      {order.reserviceRequestId && (
+                        <div style={{ background: 'var(--color-rust-pale)', border: '1px solid var(--color-rust-light)', borderRadius: 8, padding: '10px 14px', fontSize: '0.8rem', marginTop: 10, textAlign: 'left' }}>
+                          <strong style={{ color: 'var(--color-rust-dark)' }}>🛠️ Re-service: {order.reserviceRequestId.status === 'requested' ? 'Requested' : order.reserviceRequestId.status === 'scheduled' ? 'Scheduled' : 'Completed'}</strong>
+                          <p style={{ margin: '2px 0 0', color: 'var(--color-charcoal)' }}><strong>Customer Reason:</strong> {order.reserviceRequestId.reason}</p>
+                          {order.reserviceRequestId.scheduledFor && (
+                            <p style={{ margin: '2px 0 0', color: 'var(--color-forest)', fontWeight: 600 }}>
+                              📅 Scheduled Date: {new Date(order.reserviceRequestId.scheduledFor).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}
+                            </p>
+                          )}
+                          {order.reserviceRequestId.completedAt && (
+                            <p style={{ margin: '2px 0 0', color: 'var(--color-verified)', fontWeight: 600 }}>
+                              ✓ Completed on: {new Date(order.reserviceRequestId.completedAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}
+                            </p>
+                          )}
+                        </div>
+                      )}
                       {order.status === 'in_progress' && order.startedAt && <LiveTimer startedAt={order.startedAt} />}
                     </div>
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>
@@ -228,6 +300,19 @@ export default function WorkerOrders() {
                       <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                         <Link to="/worker/messages" state={{ newChatUserId: order.customerId?._id, newChatUser: order.customerId }} className="btn btn--ghost btn--sm">💬 Chat</Link>
                         <button className="btn btn--ghost btn--sm" onClick={() => setSelectedOrder(order)}><Eye size={14} /> View</button>
+                        
+                        {/* Re-service Action Buttons (Phase 4) */}
+                        {order.reserviceRequestId && order.reserviceRequestId.status === 'requested' && (
+                          <button className="btn btn--primary btn--sm" onClick={() => { setReserviceScheduleModal(order.reserviceRequestId); setReserviceDate(''); }}>
+                            📅 Schedule Revisit
+                          </button>
+                        )}
+                        {order.reserviceRequestId && order.reserviceRequestId.status === 'scheduled' && (
+                          <button className="btn btn--forest btn--sm" disabled={completingReservice === order.reserviceRequestId._id}
+                            onClick={() => handleCompleteReservice(order.reserviceRequestId._id)}>
+                            {completingReservice === order.reserviceRequestId._id ? 'Completing...' : '✓ Complete Revisit'}
+                          </button>
+                        )}
                         {order.status === 'pending' && (
                           <>
                             <button className="btn btn--primary btn--sm" onClick={() => handleAccept(order._id)}>
@@ -433,6 +518,43 @@ export default function WorkerOrders() {
             <button className="btn btn--primary btn--full btn--lg" onClick={handleCloseCongrats}>
               Close
             </button>
+          </motion.div>
+        </div>
+      )}
+
+      {/* ===================== RESERVICE SCHEDULE MODAL (Phase 4) ===================== */}
+      {reserviceScheduleModal && (
+        <div className="modal-overlay" onClick={() => setReserviceScheduleModal(null)}>
+          <motion.div className="modal" initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} onClick={e => e.stopPropagation()} style={{ maxWidth: 440 }}>
+            <div className="flex-between" style={{ marginBottom: 20 }}>
+              <h3 style={{ margin: 0 }}>📅 Schedule Re-service Visit</h3>
+              <button onClick={() => setReserviceScheduleModal(null)} className="btn btn--ghost btn--icon"><XCircle size={20} /></button>
+            </div>
+            <p style={{ color: 'var(--color-mid)', fontSize: '0.85rem', marginBottom: 16 }}>
+              Select a suitable date and time to revisit the customer and resolve their reported issues.
+            </p>
+            <div style={{ background: 'var(--color-rust-pale)', borderRadius: 10, padding: 12, marginBottom: 20, fontSize: '0.8rem', color: 'var(--color-rust-dark)' }}>
+              <strong>Customer Reported Issue:</strong>
+              <p style={{ margin: '4px 0 0', fontStyle: 'italic' }}>"{reserviceScheduleModal.reason}"</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
+              <div className="form-group">
+                <label className="form-label">Visit Date *</label>
+                <input type="date" className="form-input" value={reserviceDate} onChange={e => setReserviceDate(e.target.value)} min={new Date().toISOString().split('T')[0]} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Visit Time *</label>
+                <input type="time" className="form-input" value={reserviceTime} onChange={e => setReserviceTime(e.target.value)} />
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: 12 }}>
+              <button className="btn btn--ghost btn--full" onClick={() => setReserviceScheduleModal(null)}>Cancel</button>
+              <button className="btn btn--primary btn--full" onClick={handleScheduleReservice} disabled={schedulingReservice}>
+                {schedulingReservice ? 'Scheduling...' : 'Confirm Schedule'}
+              </button>
+            </div>
           </motion.div>
         </div>
       )}

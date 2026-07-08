@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, CreditCard, CheckCircle, ArrowLeft, ArrowRight, IndianRupee } from 'lucide-react';
+import { Calendar, Clock, MapPin, CreditCard, CheckCircle, ArrowLeft, ArrowRight, IndianRupee, Camera, X, CalendarClock, Zap } from 'lucide-react';
+import { useDropzone } from 'react-dropzone';
 import api from '../../services/api';
 import useAuthStore from '../../store/authStore';
 import toast from 'react-hot-toast';
@@ -31,9 +32,48 @@ export default function CustomerBooking() {
     city: user?.primaryAddress?.city || '',
     pincode: user?.primaryAddress?.pincode || '',
     specialInstructions: '',
+    bookingType: 'instant',
   });
+  const [problemPhotos, setProblemPhotos] = useState([]);
+  const [availability, setAvailability] = useState(null);
 
   useEffect(() => { api.get(`/customers/workers/${workerId}`).then(r => { setWorker(r.data.data); setBooking(b => ({ ...b, selectedSkill: r.data.data.primarySkill })); }).catch(() => {}); }, [workerId]);
+
+  // Fetch availability when worker loads or booking type changes to scheduled
+  useEffect(() => {
+    if (workerId && booking.bookingType === 'scheduled') {
+      api.get(`/customers/workers/${workerId}/availability`)
+        .then(r => setAvailability(r.data.data))
+        .catch(() => {});
+    }
+  }, [workerId, booking.bookingType]);
+
+  // Photo dropzone (Phase 3)
+  const onDrop = useCallback((acceptedFiles) => {
+    if (problemPhotos.length + acceptedFiles.length > 3) {
+      toast.error('Maximum 3 photos allowed');
+      return;
+    }
+    const newPhotos = acceptedFiles.map(file => Object.assign(file, { preview: URL.createObjectURL(file) }));
+    setProblemPhotos(prev => [...prev, ...newPhotos]);
+  }, [problemPhotos]);
+
+  const removePhoto = (idx) => {
+    setProblemPhotos(prev => {
+      const updated = [...prev];
+      URL.revokeObjectURL(updated[idx].preview);
+      updated.splice(idx, 1);
+      return updated;
+    });
+  };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: { 'image/*': ['.jpeg', '.jpg', '.png', '.webp'] },
+    maxSize: 5 * 1024 * 1024,
+    maxFiles: 3,
+    disabled: problemPhotos.length >= 3,
+  });
 
   const rate = worker?.skills?.find(s => s.skillName === booking.selectedSkill)?.ratePerHour || worker?.skills?.[0]?.ratePerHour || 300;
   // Minimum projection base
@@ -47,15 +87,30 @@ export default function CustomerBooking() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const res = await api.post('/bookings', {
-        workerId,
-        skillRequired: booking.selectedSkill,
-        description: booking.description,
-        scheduledDate: booking.scheduledDate,
-        scheduledTime: booking.scheduledTime,
-        paymentMethod: booking.paymentMethod,
-        location: { address: booking.address, city: booking.city, pincode: booking.pincode },
-        specialInstructions: booking.specialInstructions,
+      // Use FormData to support photo uploads
+      const formData = new FormData();
+      formData.append('workerId', workerId);
+      formData.append('skillRequired', booking.selectedSkill);
+      formData.append('description', booking.description);
+      formData.append('scheduledDate', booking.scheduledDate);
+      formData.append('scheduledTime', booking.scheduledTime);
+      formData.append('paymentMethod', booking.paymentMethod);
+      formData.append('specialInstructions', booking.specialInstructions || '');
+      formData.append('location', JSON.stringify({ address: booking.address, city: booking.city, pincode: booking.pincode }));
+      formData.append('bookingType', booking.bookingType);
+
+      if (booking.bookingType === 'scheduled' && booking.scheduledDate && booking.scheduledTime) {
+        const scheduledFor = new Date(`${booking.scheduledDate}T${booking.scheduledTime}:00`);
+        formData.append('scheduledFor', scheduledFor.toISOString());
+      }
+
+      // Attach problem photos
+      problemPhotos.forEach(photo => {
+        formData.append('problemPhotos', photo);
+      });
+
+      const res = await api.post('/bookings', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
       });
 
       if (booking.paymentMethod !== 'cash') {
@@ -100,16 +155,83 @@ export default function CustomerBooking() {
                 <p style={{ color: 'var(--color-mid)', marginBottom: 28, fontSize: '0.9rem' }}>Tell the worker what you need</p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  {/* Booking Type Toggle (Phase 2) */}
+                  <div className="form-group">
+                    <label className="form-label">Booking Type</label>
+                    <div style={{ display: 'flex', gap: 12 }}>
+                      {[{ id: 'instant', label: 'Instant', icon: <Zap size={16} />, desc: 'On-demand, ASAP' }, { id: 'scheduled', label: 'Schedule for Later', icon: <CalendarClock size={16} />, desc: 'Pick a future slot' }].map(t => (
+                        <button
+                          key={t.id}
+                          onClick={() => set('bookingType', t.id)}
+                          style={{
+                            flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
+                            padding: '16px 12px', borderRadius: 12, cursor: 'pointer',
+                            border: `2px solid ${booking.bookingType === t.id ? 'var(--color-rust)' : 'var(--color-border)'}`,
+                            background: booking.bookingType === t.id ? 'var(--color-rust-pale)' : '#fff',
+                            transition: 'all 0.2s',
+                          }}
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: booking.bookingType === t.id ? 'var(--color-rust)' : 'var(--color-mid)' }}>
+                            {t.icon}
+                            <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{t.label}</span>
+                          </div>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--color-subtle)' }}>{t.desc}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="form-group">
                     <label className="form-label">Skill Required</label>
                     <select className="form-select" value={booking.selectedSkill} onChange={e => set('selectedSkill', e.target.value)}>
-                      {worker.skills?.map(s => <option key={s.skillName} value={s.skillName}>{s.skillName} — ₹{s.ratePerHour}/hr</option>)}
+                      {worker.skills?.map(s => <option key={s.skillName} value={s.skillName}>{s.skillName} -- Rs.{s.ratePerHour}/hr</option>)}
                     </select>
                   </div>
 
                   <div className="form-group">
                     <label className="form-label">Job Description *</label>
                     <textarea className="form-textarea" rows={4} placeholder="Describe the problem in detail. E.g., 'Kitchen tap is leaking from the base. Need immediate repair.'" value={booking.description} onChange={e => set('description', e.target.value)} />
+                  </div>
+
+                  {/* Problem Photos (Phase 3) */}
+                  <div className="form-group">
+                    <label className="form-label">Problem Photos (optional, max 3)</label>
+                    <div
+                      {...getRootProps()}
+                      style={{
+                        border: `2px dashed ${isDragActive ? 'var(--color-rust)' : 'var(--color-border)'}`,
+                        borderRadius: 12, padding: '20px 16px', textAlign: 'center',
+                        cursor: problemPhotos.length >= 3 ? 'not-allowed' : 'pointer',
+                        background: isDragActive ? 'var(--color-rust-pale)' : 'var(--color-cream)',
+                        transition: 'all 0.2s',
+                      }}
+                    >
+                      <input {...getInputProps()} />
+                      <Camera size={24} color="var(--color-subtle)" style={{ margin: '0 auto 8px' }} />
+                      <p style={{ fontSize: '0.82rem', color: 'var(--color-mid)' }}>
+                        {problemPhotos.length >= 3 ? 'Maximum photos reached' : 'Drag photos here or click to browse'}
+                      </p>
+                      <p style={{ fontSize: '0.72rem', color: 'var(--color-subtle)' }}>JPG, PNG, WEBP up to 5MB each</p>
+                    </div>
+                    {problemPhotos.length > 0 && (
+                      <div style={{ display: 'flex', gap: 10, marginTop: 12, flexWrap: 'wrap' }}>
+                        {problemPhotos.map((file, idx) => (
+                          <div key={idx} style={{ position: 'relative', width: 80, height: 80, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                            <img src={file.preview} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <button
+                              onClick={(e) => { e.stopPropagation(); removePhoto(idx); }}
+                              style={{
+                                position: 'absolute', top: 2, right: 2, width: 20, height: 20, borderRadius: '50%',
+                                background: 'rgba(0,0,0,0.6)', color: '#fff', display: 'flex', alignItems: 'center',
+                                justifyContent: 'center', border: 'none', cursor: 'pointer', padding: 0,
+                              }}
+                            >
+                              <X size={12} />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
@@ -122,6 +244,22 @@ export default function CustomerBooking() {
                       <input type="time" className="form-input" value={booking.scheduledTime} onChange={e => set('scheduledTime', e.target.value)} min="08:00" max="20:00" />
                     </div>
                   </div>
+
+                  {/* Availability info for scheduled bookings */}
+                  {booking.bookingType === 'scheduled' && availability && availability.busySlots.length > 0 && (
+                    <div style={{ background: '#FFF8E1', border: '1px solid #FFE082', borderRadius: 8, padding: 14, fontSize: '0.82rem' }}>
+                      <strong style={{ color: '#F57F17' }}>Busy Slots on Selected Date:</strong>
+                      <div style={{ marginTop: 6, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                        {availability.busySlots
+                          .filter(s => booking.scheduledDate && new Date(s.date).toDateString() === new Date(booking.scheduledDate).toDateString())
+                          .map((s, i) => (
+                            <span key={i} style={{ background: '#FFECB3', padding: '3px 10px', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600 }}>
+                              {s.time} ({s.durationHours}h)
+                            </span>
+                          ))}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="form-group">
                     <div style={{ background: 'var(--color-rust-pale)', border: '1px solid var(--color-rust)', borderRadius: 8, padding: 16, color: 'var(--color-rust)', fontSize: '0.9rem' }}>

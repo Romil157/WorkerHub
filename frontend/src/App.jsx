@@ -12,6 +12,7 @@ import WorkerDashboard from './pages/worker/WorkerDashboard';
 import WorkerProfile from './pages/worker/WorkerProfile';
 import WorkerOrders from './pages/worker/WorkerOrders';
 import WorkerMessages from './pages/worker/WorkerMessages';
+import WorkerRoute from './pages/worker/WorkerRoute';
 
 // Customer Portal
 import CustomerRegister from './pages/customer/CustomerRegister';
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/worker/dashboard" element={<ProtectedRoute requiredRole="worker"><WorkerDashboard /></ProtectedRoute>} />
         <Route path="/worker/profile" element={<ProtectedRoute requiredRole="worker"><WorkerProfile /></ProtectedRoute>} />
         <Route path="/worker/orders" element={<ProtectedRoute requiredRole="worker"><WorkerOrders /></ProtectedRoute>} />
+        <Route path="/worker/route" element={<ProtectedRoute requiredRole="worker"><WorkerRoute /></ProtectedRoute>} />
         <Route path="/worker/messages" element={<ProtectedRoute requiredRole="worker"><WorkerMessages /></ProtectedRoute>} />
 
         {/* Customer Portal */}

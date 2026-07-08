@@ -23,6 +23,10 @@ const bookingSchema = new mongoose.Schema(
     scheduledTime: { type: String, required: true }, // "14:00"
     estimatedDuration: { type: Number, default: 60 }, // minutes
 
+    // Booking Type (instant is default -- preserves existing behavior)
+    bookingType: { type: String, enum: ['instant', 'scheduled'], default: 'instant' },
+    scheduledFor: { type: Date }, // only populated when bookingType === 'scheduled'
+
     // Pricing
     workerRate: { type: Number, required: true },
     durationHours: { type: Number, default: 1 },
@@ -86,6 +90,12 @@ const bookingSchema = new mongoose.Schema(
 
     // Coupon code
     couponCode: String,
+
+    // Photo attachments from customer (Cloudinary URLs)
+    attachments: [String],
+
+    // Re-service reference (Phase 4)
+    reserviceRequestId: { type: mongoose.Schema.Types.ObjectId, ref: 'ReserviceRequest' },
   },
   { timestamps: true }
 );
@@ -94,5 +104,6 @@ bookingSchema.index({ customerId: 1, createdAt: -1 });
 bookingSchema.index({ workerId: 1, createdAt: -1 });
 bookingSchema.index({ status: 1 });
 bookingSchema.index({ scheduledDate: 1 });
+bookingSchema.index({ bookingType: 1, scheduledFor: 1 });
 
 module.exports = mongoose.model('Booking', bookingSchema);
