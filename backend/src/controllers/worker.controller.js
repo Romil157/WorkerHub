@@ -190,6 +190,15 @@ const uploadAadhar = async (req, res) => {
     throw new AppError('Invalid Aadhar number. Must be 12 digits.', 400);
   }
 
+  // 1. Checksum validation (saves upload and external API costs on invalid submissions)
+  const { validateVerhoeff } = require('../utils/aadhaarChecksum');
+  if (!validateVerhoeff(aadharNumber)) {
+    throw new AppError('Invalid Aadhaar number checksum. Please verify the digits and try again.', 400);
+  }
+
+  const user = await User.findById(req.userId);
+  if (!user) throw new AppError('User not found', 404);
+
   // Upload to Cloudinary (or dev placeholder)
   let frontResult, backResult;
   try {
@@ -201,13 +210,18 @@ const uploadAadhar = async (req, res) => {
     throw new AppError('Document upload failed. Please try again. ' + uploadErr.message, 500);
   }
 
-  // AI detection check (safe — always returns false in dev)
-  const [frontAI, backAI] = await Promise.all([
-    aiDetection.checkImage(frontResult.secure_url),
-    aiDetection.checkImage(backResult.secure_url),
-  ]);
+  // 2. Perform 3-layer Aadhaar fraud detection & verification checks
+  const aadharVerification = await aiDetection.verifyAadhar({
+    frontBuffer: files.aadharFront[0].buffer,
+    backBuffer: files.aadharBack[0].buffer,
+    frontUrl: frontResult.secure_url,
+    backUrl: backResult.secure_url,
+    aadharNumber,
+    fullName,
+    dateOfBirth: user.dateOfBirth
+  });
 
-  const isAIFlagged = frontAI.isAI || backAI.isAI;
+  const isAIFlagged = aadharVerification.verdict === 'flag_for_review';
 
   await Worker.findOneAndUpdate(
     { userId: req.userId },
@@ -218,6 +232,7 @@ const uploadAadhar = async (req, res) => {
         'aadhar.frontPhoto': frontResult.secure_url,
         'aadhar.backPhoto': backResult.secure_url,
         'aadhar.verified': false,
+        'aadhar.verificationResult': aadharVerification,
         'verificationDocuments.aadhar': 'pending',
         registrationStep: 3,
       },
@@ -226,7 +241,6 @@ const uploadAadhar = async (req, res) => {
   );
 
   if (isAIFlagged) {
-    const user = await User.findById(req.userId);
     await emailService.sendAIImageFlaggedEmail(user.email, user.name, 'Aadhar document');
   }
 

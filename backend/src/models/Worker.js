@@ -47,6 +47,18 @@ const workerSchema = new mongoose.Schema(
       verifiedAt: Date,
       verificationProvider: { type: String, enum: ['Digio', 'Signzy', 'Manual'], default: 'Manual' },
       ocrData: { type: mongoose.Schema.Types.Mixed }, // extracted OCR fields
+      verificationResult: {
+        verdict: { type: String, enum: ['pass', 'flag_for_review', 'reject'] },
+        overallConfidence: Number,
+        checks: {
+          checksumValid: Boolean,
+          qrCrossCheck: { type: String, enum: ['match', 'mismatch', 'unreadable'] },
+          ocrCrossCheck: { type: String, enum: ['match', 'mismatch', 'unreadable', 'skipped'] },
+          aiGeneratedScore: Number,
+          aiDetectionProvider: String
+        },
+        reasons: [String]
+      }
     },
 
     // Life Insurance

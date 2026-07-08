@@ -148,7 +148,7 @@ export default function AdminVerification() {
                 ].map(section => (
                   <div key={section.title} style={{ marginBottom: 20 }}>
                     <div style={{ fontWeight: 600, fontSize: '0.85rem', marginBottom: 10, display: 'flex', gap: 6 }}>{section.icon} {section.title}</div>
-                    {section.fields.map(([label, key]) => section.data?.[key] && (
+                    {section.fields.map(([label, key]) => section.data?.[key] !== undefined && (
                       <div key={key} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: 6 }}>
                         <span style={{ color: 'var(--color-subtle)' }}>{label}</span>
                         <span style={{ fontWeight: 500, maxWidth: '60%', textAlign: 'right' }}>
@@ -156,6 +156,30 @@ export default function AdminVerification() {
                         </span>
                       </div>
                     ))}
+                    
+                    {/* Render verificationResult if present (Phase 6) */}
+                    {section.title === 'Aadhar Details' && section.data?.verificationResult && (
+                      <div style={{ marginTop: 12, padding: 12, borderRadius: 8, background: section.data.verificationResult.verdict === 'pass' ? '#EAF5EE' : section.data.verificationResult.verdict === 'reject' ? '#FEF2F2' : '#FFFBEB', border: `1px solid ${section.data.verificationResult.verdict === 'pass' ? '#27AE60' : section.data.verificationResult.verdict === 'reject' ? '#E74C3C' : '#F0C36D'}` }}>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 700, color: section.data.verificationResult.verdict === 'pass' ? '#1A5D3D' : section.data.verificationResult.verdict === 'reject' ? '#C0392B' : '#92400E', marginBottom: 6, display: 'flex', justifyContent: 'space-between' }}>
+                          <span>🔍 Fraud Verdict: {section.data.verificationResult.verdict.toUpperCase().replace(/_/g, ' ')}</span>
+                          <span>Score: {Math.round(section.data.verificationResult.overallConfidence * 100)}%</span>
+                        </div>
+                        <div style={{ fontSize: '0.72rem', color: 'var(--color-mid)', lineHeight: 1.5 }}>
+                          <div>• Checksum: {section.data.verificationResult.checks?.checksumValid ? '✅ Valid' : '❌ Invalid'}</div>
+                          <div>• QR Scan: {section.data.verificationResult.checks?.qrCrossCheck === 'match' ? '✅ Match' : section.data.verificationResult.checks?.qrCrossCheck === 'mismatch' ? '⚠️ Mismatch' : '❔ Unreadable'}</div>
+                          <div>• OCR: {section.data.verificationResult.checks?.ocrCrossCheck === 'match' ? '✅ Match' : section.data.verificationResult.checks?.ocrCrossCheck === 'mismatch' ? '⚠️ Mismatch' : section.data.verificationResult.checks?.ocrCrossCheck === 'skipped' ? '⏭️ Skipped' : '❔ Unreadable'}</div>
+                          <div>• AI Detection Score: {section.data.verificationResult.checks?.aiGeneratedScore?.toFixed(2)} ({section.data.verificationResult.checks?.aiDetectionProvider})</div>
+                        </div>
+                        {section.data.verificationResult.reasons?.length > 0 && (
+                          <div style={{ marginTop: 8, borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: 6 }}>
+                            <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-charcoal)' }}>Flagged Reasons:</div>
+                            {section.data.verificationResult.reasons.map((r, ri) => (
+                              <div key={ri} style={{ fontSize: '0.68rem', color: '#C0392B', marginTop: 2 }}>- {r}</div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
 
